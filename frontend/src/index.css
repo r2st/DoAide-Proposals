@@ -116,6 +116,12 @@ input:focus, textarea:focus, select:focus {
   color: #9CA3AF;
   margin: 0 0 1.5rem;
 }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.tool-card { display: flex; flex-direction: column; gap: 0.25rem; padding: 1.25rem; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; text-decoration: none; color: #E5E7EB; transition: border-color 0.15s, transform 0.15s; background: rgba(16,16,18,0.8); }
+.tool-card:hover { border-color: #F0B429; transform: translateY(-2px); }
+.tool-card-icon { font-size: 1.75rem; }
+.tool-card-title { font-size: 1rem; font-weight: 600; color: #F3F4F6; margin: 0; }
+.tool-card-desc { font-size: 0.82rem; color: #9CA3AF; margin: 0; }
 
 .calc-card {
   background: rgba(16, 16, 18, 0.8);

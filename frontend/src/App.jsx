@@ -19,6 +19,9 @@ import CostCalculatorPage from './pages/CostCalculatorPage';
 import TemplatesGalleryPage from './pages/TemplatesGalleryPage';
 import EmbedPage from './pages/EmbedPage';
 import BlogLayout, { ARTICLES, BlogIndex } from './pages/BlogLayout';
+import ToolsIndexPage from './pages/ToolsIndexPage';
+import WinRateEstimatorPage from './pages/WinRateEstimatorPage';
+import PricingCalculatorPage from './pages/PricingCalculatorPage';
 
 export default function App() {
   return (
@@ -34,6 +37,9 @@ export default function App() {
       <Route path="/calculator" element={<CostCalculatorPage />} />
       <Route path="/templates-gallery" element={<TemplatesGalleryPage />} />
       <Route path="/embed" element={<EmbedPage />} />
+      <Route path="/tools" element={<ToolsIndexPage />} />
+      <Route path="/tools/win-rate" element={<WinRateEstimatorPage />} />
+      <Route path="/tools/pricing-calculator" element={<PricingCalculatorPage />} />
       <Route path="/blog" element={<BlogLayout />}>
         <Route index element={<BlogIndex />} />
         {ARTICLES.map(a => <Route key={a.slug} path={a.slug} element={<a.component />} />)}
