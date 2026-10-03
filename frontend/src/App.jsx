@@ -14,6 +14,11 @@ import ClientView from './pages/ClientView';
 import Settings from './pages/Settings';
 import Pricing from './pages/Pricing';
 import PublicProposal from './pages/PublicProposal';
+import GeneratorPage from './pages/GeneratorPage';
+import CostCalculatorPage from './pages/CostCalculatorPage';
+import TemplatesGalleryPage from './pages/TemplatesGalleryPage';
+import EmbedPage from './pages/EmbedPage';
+import BlogLayout, { ARTICLES, BlogIndex } from './pages/BlogLayout';
 
 export default function App() {
   return (
@@ -23,6 +28,16 @@ export default function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/p/:token" element={<PublicProposal />} />
+
+      {/* Free tools */}
+      <Route path="/generator" element={<GeneratorPage />} />
+      <Route path="/calculator" element={<CostCalculatorPage />} />
+      <Route path="/templates-gallery" element={<TemplatesGalleryPage />} />
+      <Route path="/embed" element={<EmbedPage />} />
+      <Route path="/blog" element={<BlogLayout />}>
+        <Route index element={<BlogIndex />} />
+        {ARTICLES.map(a => <Route key={a.slug} path={a.slug} element={<a.component />} />)}
+      </Route>
 
       <Route
         path="/dashboard"

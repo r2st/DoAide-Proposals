@@ -15,8 +15,7 @@ function renderLanding() {
 describe('Landing', () => {
   it('renders hero heading', () => {
     renderLanding();
-    expect(screen.getByText(/AI-Powered/)).toBeInTheDocument();
-    expect(screen.getByText(/Proposal Generation/)).toBeInTheDocument();
+    expect(screen.getByText(/Powered by AI/)).toBeInTheDocument();
   });
 
   it('renders all 6 feature cards', () => {
@@ -33,8 +32,8 @@ describe('Landing', () => {
     renderLanding();
     expect(screen.getByText('How It Works')).toBeInTheDocument();
     expect(screen.getByText('Choose a template')).toBeInTheDocument();
-    expect(screen.getByText('Customize with AI')).toBeInTheDocument();
-    expect(screen.getByText('Send & track')).toBeInTheDocument();
+    expect(screen.getByText('AI writes your proposal')).toBeInTheDocument();
+    expect(screen.getByText('Send & get signed')).toBeInTheDocument();
   });
 
   it('renders pricing section with 3 tiers', () => {
@@ -47,20 +46,20 @@ describe('Landing', () => {
 
   it('renders testimonials', () => {
     renderLanding();
-    expect(screen.getByText(/Marcus R\./)).toBeInTheDocument();
-    expect(screen.getByText(/Lisa K\./)).toBeInTheDocument();
-    expect(screen.getByText(/David P\./)).toBeInTheDocument();
+    expect(screen.getByText(/Sarah T\./)).toBeInTheDocument();
+    expect(screen.getByText(/James K\./)).toBeInTheDocument();
+    expect(screen.getByText(/Priya M\./)).toBeInTheDocument();
   });
 
   it('renders FAQ section with accordion', async () => {
     renderLanding();
     expect(screen.getByText('Frequently Asked Questions')).toBeInTheDocument();
-    const firstQ = screen.getByText('How does the AI generation work?');
+    const firstQ = screen.getByText('What types of proposals can I create?');
     expect(firstQ).toBeInTheDocument();
 
     const user = userEvent.setup();
     await user.click(firstQ);
-    expect(screen.getByText(/describe your project/i)).toBeInTheDocument();
+    expect(screen.getByText(/Business proposals, project quotes/)).toBeInTheDocument();
   });
 
   it('has Get Started links', () => {
@@ -73,5 +72,13 @@ describe('Landing', () => {
     renderLanding();
     expect(screen.getByText('DoAide Products')).toBeInTheDocument();
     expect(screen.getByText('doaide.com')).toBeInTheDocument();
+  });
+
+  it('renders free tools section', () => {
+    renderLanding();
+    expect(screen.getByText('Free Proposal Tools')).toBeInTheDocument();
+    expect(screen.getAllByText('Proposal Generator').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Cost Estimator').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Template Gallery').length).toBeGreaterThan(0);
   });
 });
