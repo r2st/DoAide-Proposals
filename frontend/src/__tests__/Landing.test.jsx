@@ -1,35 +1,77 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, it, expect } from 'vitest';
+import userEvent from '@testing-library/user-event';
 import Landing from '../pages/Landing';
 
+function renderLanding() {
+  return render(
+    <MemoryRouter>
+      <Landing />
+    </MemoryRouter>
+  );
+}
+
 describe('Landing', () => {
-  it('shows hero text', () => {
-    render(
-      <MemoryRouter>
-        <Landing />
-      </MemoryRouter>
-    );
-    expect(screen.getByText(/Powered by AI/i)).toBeInTheDocument();
+  it('renders hero heading', () => {
+    renderLanding();
+    expect(screen.getByText(/AI-Powered/)).toBeInTheDocument();
+    expect(screen.getByText(/Proposal Generation/)).toBeInTheDocument();
   });
 
-  it('shows feature cards', () => {
-    render(
-      <MemoryRouter>
-        <Landing />
-      </MemoryRouter>
-    );
+  it('renders all 6 feature cards', () => {
+    renderLanding();
     expect(screen.getByText('AI-Powered Generation')).toBeInTheDocument();
+    expect(screen.getByText('Template Builder')).toBeInTheDocument();
+    expect(screen.getByText('Client Management')).toBeInTheDocument();
+    expect(screen.getByText('Smart Pricing Engine')).toBeInTheDocument();
+    expect(screen.getByText('PDF Export')).toBeInTheDocument();
     expect(screen.getByText('E-Signatures')).toBeInTheDocument();
   });
 
-  it('has get started link', () => {
-    render(
-      <MemoryRouter>
-        <Landing />
-      </MemoryRouter>
-    );
-    const links = screen.getAllByText('Get Started');
+  it('renders how-it-works section', () => {
+    renderLanding();
+    expect(screen.getByText('How It Works')).toBeInTheDocument();
+    expect(screen.getByText('Choose a template')).toBeInTheDocument();
+    expect(screen.getByText('Customize with AI')).toBeInTheDocument();
+    expect(screen.getByText('Send & track')).toBeInTheDocument();
+  });
+
+  it('renders pricing section with 3 tiers', () => {
+    renderLanding();
+    expect(screen.getByText('Simple, Transparent Pricing')).toBeInTheDocument();
+    expect(screen.getByText('$0')).toBeInTheDocument();
+    expect(screen.getByText('$19')).toBeInTheDocument();
+    expect(screen.getByText('$49')).toBeInTheDocument();
+  });
+
+  it('renders testimonials', () => {
+    renderLanding();
+    expect(screen.getByText(/Marcus R\./)).toBeInTheDocument();
+    expect(screen.getByText(/Lisa K\./)).toBeInTheDocument();
+    expect(screen.getByText(/David P\./)).toBeInTheDocument();
+  });
+
+  it('renders FAQ section with accordion', async () => {
+    renderLanding();
+    expect(screen.getByText('Frequently Asked Questions')).toBeInTheDocument();
+    const firstQ = screen.getByText('How does the AI generation work?');
+    expect(firstQ).toBeInTheDocument();
+
+    const user = userEvent.setup();
+    await user.click(firstQ);
+    expect(screen.getByText(/describe your project/i)).toBeInTheDocument();
+  });
+
+  it('has Get Started links', () => {
+    renderLanding();
+    const links = screen.getAllByText(/Get Started/);
     expect(links.length).toBeGreaterThan(0);
+  });
+
+  it('renders footer with DoAide products', () => {
+    renderLanding();
+    expect(screen.getByText('DoAide Products')).toBeInTheDocument();
+    expect(screen.getByText('doaide.com')).toBeInTheDocument();
   });
 });
