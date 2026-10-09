@@ -2,6 +2,8 @@ import { Link, Outlet } from "react-router-dom";
 import ProposalWritingGuide from "./blog/ProposalWritingGuide";
 import PricingStrategies from "./blog/PricingStrategies";
 import ClientManagement from "./blog/ClientManagement";
+import WinningProposalStructure from "./blog/WinningProposalStructure";
+import ProposalFollowUp from "./blog/ProposalFollowUp";
 
 const ARTICLES = [
   {
@@ -21,6 +23,18 @@ const ARTICLES = [
     title: "Client Management Best Practices for Agencies",
     description: "Practical tips for managing client relationships, setting expectations, and reducing churn.",
     component: ClientManagement,
+  },
+  {
+    slug: "proposal-structure-breakdown",
+    title: "The Perfect Proposal Structure: A Section-by-Section Breakdown",
+    description: "A detailed blueprint for structuring proposals that win — cover page to call to action, with common mistakes to avoid.",
+    component: WinningProposalStructure,
+  },
+  {
+    slug: "proposal-follow-up-guide",
+    title: "How to Follow Up on a Proposal Without Being Annoying",
+    description: "The follow-up timeline, what to say at each stage, and when to stop — backed by sales data.",
+    component: ProposalFollowUp,
   },
 ];
 

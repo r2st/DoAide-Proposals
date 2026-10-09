@@ -3,11 +3,13 @@ import ToolsNav from "../components/ToolsNav";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 const TOOLS = [
-  { path: "/generator", title: "Proposal Generator", description: "Generate a professional proposal with AI assistance.", icon: "📝" },
+  { path: "/builder", title: "Proposal Builder", description: "Build a proposal step-by-step and download as a professional PDF.", icon: "📋" },
+  { path: "/generator", title: "Proposal Generator", description: "Generate a professional proposal outline with AI assistance.", icon: "📝" },
   { path: "/calculator", title: "Cost Estimator", description: "Estimate project costs with built-in formulas.", icon: "🧮" },
   { path: "/templates-gallery", title: "Proposal Templates", description: "Browse free proposal templates for various industries.", icon: "📁" },
   { path: "/tools/win-rate", title: "Win Rate Estimator", description: "Estimate your proposal win probability based on key factors.", icon: "🎯" },
   { path: "/tools/pricing-calculator", title: "Pricing Calculator", description: "Calculate project pricing with margins, discounts, and taxes.", icon: "💰" },
+  { path: "/tools/pricing-table", title: "Pricing Table Builder", description: "Build line-item pricing tables with tax and discount calculations.", icon: "📊" },
 ];
 
 export default function ToolsIndexPage() {

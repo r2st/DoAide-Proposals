@@ -340,21 +340,26 @@ export default function Landing() {
             <p className="text-gray-600 dark:text-gray-400 text-center mb-14 max-w-xl mx-auto">
               No signup required. Use these tools instantly to plan your next project.
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Link to="/builder" className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0A0A0B] hover:border-[#F0B429]/50 transition-colors no-underline group">
+                <div className="text-2xl mb-3">&#x1F4CB;</div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#F0B429] transition-colors">Proposal Builder</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Build a proposal step-by-step and download as a professional PDF.</p>
+              </Link>
               <Link to="/generator" className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0A0A0B] hover:border-[#F0B429]/50 transition-colors no-underline group">
                 <div className="text-2xl mb-3">&#x1F4DD;</div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#F0B429] transition-colors">Proposal Generator</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Generate a structured proposal outline instantly from your project details.</p>
               </Link>
-              <Link to="/calculator" className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0A0A0B] hover:border-[#F0B429]/50 transition-colors no-underline group">
-                <div className="text-2xl mb-3">&#x1F4B0;</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#F0B429] transition-colors">Cost Estimator</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Estimate project costs with team size, timeline, and rate inputs.</p>
+              <Link to="/tools/pricing-table" className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0A0A0B] hover:border-[#F0B429]/50 transition-colors no-underline group">
+                <div className="text-2xl mb-3">&#x1F4CA;</div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#F0B429] transition-colors">Pricing Table Builder</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Build line-item pricing tables with tax and discount calculations.</p>
               </Link>
               <Link to="/templates-gallery" className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0A0A0B] hover:border-[#F0B429]/50 transition-colors no-underline group">
                 <div className="text-2xl mb-3">&#x1F4C4;</div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#F0B429] transition-colors">Template Gallery</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Browse 6 proposal templates for consulting, development, marketing, and more.</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Browse proposal templates for consulting, development, marketing, and more.</p>
               </Link>
             </div>
           </div>
@@ -392,10 +397,10 @@ export default function Landing() {
             <div>
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Free Tools</h4>
               <div className="space-y-2 text-sm">
+                <Link to="/builder" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Proposal Builder</Link>
                 <Link to="/generator" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Proposal Generator</Link>
-                <Link to="/calculator" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Cost Estimator</Link>
+                <Link to="/tools/pricing-table" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Pricing Table Builder</Link>
                 <Link to="/templates-gallery" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Template Gallery</Link>
-                <Link to="/embed" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Embed Widgets</Link>
                 <Link to="/blog" className="block text-gray-500 dark:text-gray-400 hover:text-[#F0B429] no-underline">Blog</Link>
               </div>
             </div>

@@ -77,8 +77,9 @@ describe('Landing', () => {
   it('renders free tools section', () => {
     renderLanding();
     expect(screen.getByText('Free Proposal Tools')).toBeInTheDocument();
+    expect(screen.getAllByText('Proposal Builder').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Proposal Generator').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Cost Estimator').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Template Gallery').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Pricing Table Builder').length).toBeGreaterThan(0);
   });
 });
