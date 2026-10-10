@@ -4,6 +4,9 @@ import PricingStrategies from "./blog/PricingStrategies";
 import ClientManagement from "./blog/ClientManagement";
 import WinningProposalStructure from "./blog/WinningProposalStructure";
 import ProposalFollowUp from "./blog/ProposalFollowUp";
+import BusinessProposalFormat from "./blog/BusinessProposalFormat";
+import ProjectProposalGuide from "./blog/ProjectProposalGuide";
+import GovernmentTenderProposal from "./blog/GovernmentTenderProposal";
 
 const ARTICLES = [
   {
@@ -35,6 +38,24 @@ const ARTICLES = [
     title: "How to Follow Up on a Proposal Without Being Annoying",
     description: "The follow-up timeline, what to say at each stage, and when to stop — backed by sales data.",
     component: ProposalFollowUp,
+  },
+  {
+    slug: "business-proposal-format-india",
+    title: "Business Proposal Format: Professional Template for Indian Companies",
+    description: "A complete guide to the professional business proposal format used by successful Indian companies — structure, sections, formatting tips, and free templates.",
+    component: BusinessProposalFormat,
+  },
+  {
+    slug: "winning-project-proposal-guide",
+    title: "How to Write a Winning Project Proposal: Step-by-Step Guide",
+    description: "Learn how to write a project proposal that gets approved — from defining objectives and scope to budgeting, risk analysis, and professional formatting.",
+    component: ProjectProposalGuide,
+  },
+  {
+    slug: "government-tender-proposal-msme",
+    title: "Government Tender Proposal Writing: Tips for Indian MSMEs",
+    description: "A practical guide for Indian MSMEs on writing government tender proposals — from GeM registration and EMD to technical bids, pricing, and common disqualification traps.",
+    component: GovernmentTenderProposal,
   },
 ];
 
